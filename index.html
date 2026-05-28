@@ -623,6 +623,7 @@
         <button class="interest-btn" onclick="showInterest('art', this)">Dessin & peinture</button>
         <button class="interest-btn" onclick="showInterest('cinema', this)">Cinéma</button>
         <button class="interest-btn" onclick="showInterest('music', this)">Musique</button>
+        <button class="interest-btn" onclick="showInterest('literature', this)">Littérature</button>
       </div>
       <div id="interest-content" class="interest-content">
         <p class="game-subtitle">Cliquez sur une catégorie pour l'ouvrir.</p>
@@ -806,15 +807,15 @@ function openAbout() {
 // ABOUT / MAP / INTERESTS / LOCAL RESULTS
 // ══════════════════════════════════════════════════════════════
 const CITIES = [
-  { name:'Rabat', text:"Moment mémorable : meilleure ville sur cette planète, 13 ans de ma vie et un nombre de concerts incalculable.", x:44.50, y:42.80, partial:false, flag:'🇲🇦' },
-  { name:'Casablanca', text:"Mention honorable : mes parents y ont habité, et j’y ai habité environ un quart de l’année.", x:44.20, y:43.75, partial:true, flag:'🇲🇦' },
-  { name:'Meknès', text:"Moment mémorable : j’y ai vécu 3 ans, mais j’ai très peu de souvenirs.", x:45.85, y:41.75, partial:false, flag:'🇲🇦' },
-  { name:'Fès', text:'Moment mémorable : hiver trop froid et été trop chaud, plus jamais.', x:46.65, y:41.70, partial:false, flag:'🇲🇦' },
-  { name:'Taza', text:'Moment mémorable : honnêtement, rien de mémorable.', x:47.45, y:42.05, partial:false, flag:'🇲🇦' },
-  { name:'Oujda', text:"Mention honorable : mes parents y ont habité, et j’y ai habité environ un quart de l’année.", x:48.65, y:41.55, partial:true, flag:'🇲🇦' },
-  { name:'Lille', text:"Moment mémorable : 1,5 ans avec les Ch’tis. Ville étudiante trop sympa, mais à éviter l’hiver si on est allergique au froid.", x:47.60, y:30.00, partial:false, flag:'🇫🇷' },
-  { name:'Paris', text:'Moment mémorable : 1 an de césure et maintenant :)', x:47.30, y:31.60, partial:false, flag:'🇫🇷' },
-  { name:'Belo Horizonte', text:"Moment mémorable : carnaval de Rio et séjour de 4 jours en Amazonie.", x:31.60, y:73.60, partial:false, flag:'🇧🇷' }
+  { name:'Rabat', text:"Meilleure ville sur cette planète, 13 ans de ma vie & un nombre de concerts incalculable.", x:44.50, y:42.80, partial:false, flag:'🇲🇦' },
+  { name:'Casablanca', text:"Mention honorable : mes parents y habitent actuellement donc je les visite là-bas.", x:44.20, y:43.75, partial:true, flag:'🇲🇦' },
+  { name:'Meknès', text:"J’y ai vécu 3 ans, mais j’ai très très peu de souvenirs.", x:45.85, y:41.75, partial:false, flag:'🇲🇦' },
+  { name:'Fès', text:'Hiver trop froid et été trop chaud, plus jamais.', x:46.65, y:41.70, partial:false, flag:'🇲🇦' },
+  { name:'Taza', text:'Moment mémorable : rien.', x:47.45, y:42.05, partial:false, flag:'🇲🇦' },
+  { name:'Oujda', text:"Mention honorable uniquement : mes parents y ont habité, et j’y ai habité environ un quart de l’année.", x:48.65, y:41.55, partial:true, flag:'🇲🇦' },
+  { name:'Lille', text:"1,5 ans avec les Ch’tis : ville étudiante très sympa. PS: à éviter l’hiver si on est allergique au froid, j'en ai payé les frais.", x:47.60, y:30.00, partial:false, flag:'🇫🇷' },
+  { name:'Paris', text:'durée : 1 an de césure et maintenant :). Deuxième meilleure ville sur cette planète!', x:47.30, y:31.60, partial:false, flag:'🇫🇷' },
+  { name:'Belo Horizonte', text:"Échange académique, moments mémorables : tout mais si je ne devais en choisir que 2 : carnaval de Rio et séjour de 4 jours en Amazonie.", x:31.60, y:73.60, partial:false, flag:'🇧🇷' }
 ];
 let mapState = { scale: 1, x: 0, y: 0 };
 function applyMapTransform() {
@@ -901,9 +902,29 @@ function showInterest(type, btn) {
     box.innerHTML = `<h3 class="card-title">Dessin & peinture</h3><div class="gallery-placeholder"><div class="image-slot"><img src="assets/dessin-1.jpg" alt="Dessin 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="placeholder-box">Photo dessin 1<br>assets/dessin-1.jpg</div></div><div class="image-slot"><img src="assets/dessin-2.jpg" alt="Dessin 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="placeholder-box">Photo dessin 2<br>assets/dessin-2.jpg</div></div><div class="image-slot"><img src="assets/dessin-3.jpg" alt="Dessin 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="placeholder-box">Photo dessin 3<br>assets/dessin-3.jpg</div></div><div class="image-slot"><img src="assets/dessin-4.jpg" alt="Dessin 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="placeholder-box">Photo dessin 4<br>assets/dessin-4.jpg</div></div></div>`;
   } else if (type === 'cinema') {
     box.innerHTML = `<div class="film-grid"><div class="film-card"><div class="film-poster"><img src="assets/the-prestige.jpg" alt="The Prestige" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="poster-placeholder">Affiche<br>assets/the-prestige.jpg</div></div><p>The Prestige</p></div><div class="film-card"><div class="film-poster"><img src="assets/marock.jpg" alt="Marock" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="poster-placeholder">Affiche<br>assets/marock.jpg</div></div><p>Marock</p></div><div class="film-card"><div class="film-poster"><img src="assets/the-terminal.jpg" alt="The Terminal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="poster-placeholder">Affiche<br>assets/the-terminal.jpg</div></div><p>The Terminal</p></div></div>`;
-  } else {
-    box.innerHTML = `<p class="game-subtitle" style="font-size:16px">Cliché assumé : Harry Styles, Taylor Swift et 5 Seconds of Summer. À part ça, j’écoute un peu de tout, surtout pop & rock, donc je suis toujours ouverte aux recommandations.</p>`;
-  }
+ } else if (type === 'music') {
+  box.innerHTML = `
+    <p class="game-subtitle" style="font-size:16px">
+      Un mélange très assumé de <em>basic white girl music</em> — Taylor Swift, Harry Styles, 5 Seconds of Summer… mais aussi pas mal de pop & rock en général.
+    </p>
+  `;
+} else if (type === 'literature') {
+  box.innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <p class="game-subtitle" style="font-size:16px">
+        <em>Normal People</em> — Sally Rooney
+      </p>
+
+      <p class="game-subtitle" style="font-size:16px">
+        <em>En attendant Bojangles</em> — Olivier Bourdeaut
+      </p>
+
+      <p class="game-subtitle" style="font-size:16px">
+        <em>Lettre d’une inconnue</em> — Stefan Zweig
+      </p>
+    </div>
+  `;
+}
 }
 function showArtGallery(kind) {
   const gallery = document.getElementById('art-gallery');
