@@ -623,7 +623,7 @@
         <button class="interest-btn" onclick="showInterest('art', this)">Dessin & peinture</button>
         <button class="interest-btn" onclick="showInterest('cinema', this)">Cinéma</button>
         <button class="interest-btn" onclick="showInterest('music', this)">Musique</button>
-        <button class="interest-btn" onclick="showInterest('literature', this)">Littérature</button>
+        <button class="interest-btn" onclick="showInterest('literature', this)">Lecture</button>
       </div>
       <div id="interest-content" class="interest-content">
         <p class="game-subtitle">Cliquez sur une catégorie pour l'ouvrir.</p>
@@ -905,10 +905,10 @@ function showInterest(type, btn) {
  } else if (type === 'music') {
   box.innerHTML = `
     <p class="game-subtitle" style="font-size:16px">
-      Un mélange très assumé de <em>basic white girl music</em> — Taylor Swift, Harry Styles, 5 Seconds of Summer… mais aussi pas mal de pop & rock en général.
+      Un mélange très assumé de <em>basic white girl music</em> — Taylor Swift, Harry Styles, 5 Seconds of Summer… mais aussi pas mal de pop & rock en général. Toujours preneuse de recommandations :D.
     </p>
   `;
-} else if (type === 'literature') {
+} else if (type === 'lecture') {
   box.innerHTML = `
     <div style="display:flex; flex-direction:column; gap:14px;">
       <p class="game-subtitle" style="font-size:16px">
